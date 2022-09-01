@@ -57,19 +57,21 @@
         <b>OR</b>
         <div style="margin-bottom: 50px">
           <v-btn
-          href="https://www.facebook.com/"
+            href="https://www.facebook.com/"
             :disabled="!valid"
             color="#4266B2"
             class="mr-4"
-            
           >
             FaceBook
           </v-btn>
 
-          <v-btn 
-          href="https://accounts.google.com/"
-          :disabled="!valid" color="" class="mr-4" @click="validate">
-            
+          <v-btn
+            href="https://accounts.google.com/"
+            :disabled="!valid"
+            color=""
+            class="mr-4"
+            @click="validate"
+          >
             Google
           </v-btn>
         </div>
@@ -79,6 +81,8 @@
 </template>
   
 <script>
+import UserService from '@/Services/UserService/UserService';
+
 export default {
   name: "LoginComponent",
   data: () => ({
@@ -101,8 +105,23 @@ export default {
     sending: false,
   }),
   methods: {
-    
-  }
+    validate() {
+      console.log(this.email);
+      console.log(this.Password);
+      let reqData = {
+        email:this.email,
+        password:this.Password,
+      }
+      UserService.prototype.loginService(reqData).then((data)=> {
+        console.log("Response from login", data);
+        localStorage.setItem("token", data.data.token);
+        this.$router.push({path:'/dashboard'})
+      })
+      .catch((error) => {
+          console.log(error);
+        });
+    }
+  },
 };
 </script>
   <style>
