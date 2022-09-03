@@ -2,7 +2,7 @@
     <div>
       <v-card class="navigation_bar">
         <v-app-bar color="#A03037">
-          
+          <div></div>
           <img style="padding-left:130px"
             class="mr-3"
             :src="require('../assets/education.svg')"
@@ -10,7 +10,7 @@
           />
           <v-toolbar-title style="padding-left: 10px; color: white;">BookStore</v-toolbar-title>
           <v-spacer> </v-spacer>
-          
+          <div></div>
           <v-col  cols="9">
             <v-text-field 
               solo
@@ -19,30 +19,38 @@
               hide-details
             ></v-text-field>
             </v-col>
+            
             <div class="right_logos">
           <img
-            style="height: 30px"
+            
+          style="height: 30px;"
+          
             class="ma-3"
             :src="require('../assets/person.svg')"
-          />--
+          />
           <img 
              style="height: 30px"
-            class="ma-3"
+            
             :src="require('../assets/cart.svg')"
           />
           </div>            
         </v-app-bar>
             </v-card>
-            </div>
+            <!-- <GetAllBooks></GetAllBooks> -->
+            <router-view></router-view>
+          </div>
+                      
+                                    
             </template>
   <script>
+//import GetAllBooks from './GetAllBooks.vue';
     export default {
-      
-        data: () => ({
+    data: () => ({
         drawer: false,
         group: null,
-      }),
-    }
+    }),
+    // components: { GetAllBooks }
+}
   </script>
 <style>
 
@@ -66,6 +74,9 @@
   display: flex;
   flex-direction: row;
   
+}
+.ma-3 {
+  padding-left: 10px;
 }
 
 </style>

@@ -1,4 +1,5 @@
 <template>
+  
   <v-form ref="form" v-model="valid" lazy-validation>
     <v-col>
       <div class="email">
@@ -32,35 +33,29 @@
         <router-link to="/forget">Forget Password</router-link>
       </div>
 
-      <div
-        style="
-          top: 398px;
-          left: 727px;
-          width: 270px;
-          height: 37px;
-          background: #a03037 0% 0% no-repeat padding-box;
-          border-radius: 3px;
-          color: #ffffff;
-          opacity: 1; ;
-        "
-      >
+      <div>
         <v-btn
           :disabled="!valid"
           color="#a03037"
-          class="mr-4"
+          class="btn"
           @click="validate"
         >
-          Login
+        <div style="margin-left: -20px;color: white;">
+
+        Login
+        </div>
         </v-btn>
       </div>
-      <div style="padding-top: 20px; margin-left: -20px">
+      <div style="padding-top: 20px; margin-left: -50px">
         <b>OR</b>
-        <div style="margin-bottom: 50px">
+        </div>
+        <div >
+          <div class="fb_gle_btn">
           <v-btn
             href="https://www.facebook.com/"
             :disabled="!valid"
             color="#4266B2"
-            class="mr-4"
+            
           >
             FaceBook
           </v-btn>
@@ -68,14 +63,13 @@
           <v-btn
             href="https://accounts.google.com/"
             :disabled="!valid"
-            color=""
-            class="mr-4"
             @click="validate"
           >
             Google
           </v-btn>
+          </div>
         </div>
-      </div>
+      
     </v-col>
   </v-form>
 </template>
@@ -179,4 +173,17 @@ export default {
     padding-bottom: 90px;
     
 } */
+.btn {
+  width:270px;
+  margin-left: -30px;
+  margin-top: 20px;
+}
+.fb_gle_btn {
+  margin-top: 30px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+}
+
 </style>

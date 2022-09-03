@@ -52,11 +52,11 @@
                 >
                   Reset Password
                 </v-btn>
-                <div class="createAccount">
-                  <v-btn
+                <div class="hhh">
+                  <v-btn 
                   href="http://localhost:8080/admin"  
                   elevation="0.5"
-                    style="margin-top: 20px;" 
+                    style="margin-top: 44px; width:354px;height:100px;margin-left:-50px" 
                     >CREATE ACCOUNT</v-btn
                   >
                 </div>
@@ -73,7 +73,7 @@
   <script>
 import AppBar from "./AppBar.vue";
 
-//import UserService from '@/services/userService/userService';
+import UserService from '@/Services/UserService/UserService';
 
 export default {
     name: "ForgetPasswordComponent",
@@ -90,8 +90,28 @@ export default {
             (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
         ],
     }),
-    components: {  AppBar }
+    methods: {
+    validate() {
+      this.$refs.form.validate();
+      console.log(this.email);
+      let reqData= {
+        email:this.email,
+        
+      }
+    UserService.prototype.forgetPasswordService(reqData).then((data)=>{
+        console.log("Response from forgotPassword",data);
+    }).catch((error)=>{
+        console.log(error);
+    })
+
+    },
+      
+  },
+  components: {  AppBar }
 };
+    
+    
+
 </script>
   <style>
 .centrealign {

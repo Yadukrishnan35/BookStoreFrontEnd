@@ -7,4 +7,7 @@ export default class AxiosService {
       console.log(reqPayload);
       return axios.post(BASE_URL + url, reqPayload, token && httpAuthOptions)
     }
+    getService(url, token, httpAuthOptions) {
+      return axios.get(BASE_URL + url, token && httpAuthOptions)
+    }
 }

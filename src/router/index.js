@@ -5,6 +5,9 @@ import dashboardBarView from '../views/DashboardBarView.vue'
 import LoginView from '../views/LoginView'
 import SignupOrLogin from '../views/SignupOrLogin.vue'
 import ForgetPasswordView from '../views/ForgetPasswordView'
+import resetPasswordView from '../views/ResetPasswordView'
+import GetAllBooks from '../components/GetAllBooks.vue'
+//import GetAllBooksView from '../views/GetAllBooksView.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -24,14 +27,15 @@ const routes = [
   {
     path: '/dashboard',
     name: 'dashboardUI',
-    component:dashboardBarView 
-  },
+    component:dashboardBarView, 
+    children: [{ path: '/', name: 'GetAllBooks', component: GetAllBooks }],
+    },
   {
     path: '/login',
     name: 'LoginUI',
     component:LoginView 
   },
-  {
+    {
     path: '/admin',
     name:'RegisterUI',
     component:SignupOrLogin 
@@ -41,6 +45,14 @@ const routes = [
     name: 'forgetUI',
     component: ForgetPasswordView 
   },
+
+  {
+    path: '/resetPassword/:token',
+    name: 'resetPasswordUI',
+    component: resetPasswordView,
+    
+  },
+  
 
 ]
 
