@@ -14,13 +14,16 @@
         v-for="book in bookListArray" 
         :key="book.id"
         >
-        <div style="padding-top: 100px;"   >
-        {{book.name}}<br>
-           {{book.description}}<br>
-           {{book.author}}<br>
-           {{book.image}}<br>
-           {{book.price}}<br>
-            {{book.quantity}}
+        <div style="padding-top: 20px;"   >
+          
+          <img src="../assets/Book.png" alt="book" width="140" height="150"><br>
+          <b>{{book.name}}</b><br>
+           
+        <!-- {{book.description}}<br> -->
+           by {{book.author}}<br>
+           
+          <b> Rs.{{book.price}}</b><br>
+            <!-- {{book.quantity}} -->
            </div>
         
   
@@ -75,6 +78,7 @@
     width: 1000px;
     margin-left: 250px;
     margin-top: 50px;
+    gap:10px;
   }
   .icone {
     display: flex;

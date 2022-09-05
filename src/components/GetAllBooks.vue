@@ -1,6 +1,8 @@
 <template>
 <div style="padding-right: 900px;margin-top: 50px;">
-<h1>Books</h1>
+    <div style="display: flex;flex-direction: row;"></div>
+    <h1>Books</h1>
+({{ booksArray.length }} items)
 <DisplayBooks v-bind:bookListArray="booksArray"></DisplayBooks>
 </div>
 </template>
