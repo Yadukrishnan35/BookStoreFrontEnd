@@ -10,13 +10,15 @@
     >
     
     <div
-        style="width: 230px; height: 250px; margin: 5px; border: 1px solid"
+        style="width: 230px; height: 250px; margin: 5px; border: 2px solid #E2E2E2 "
         v-for="book in bookListArray" 
         :key="book.id"
         >
-        <div style="padding-top: 20px;"   >
+        <div style="padding-top: 10px;background-color: #dcdcdc;">
           
           <img src="../assets/Book.png" alt="book" width="140" height="150"><br>
+        </div>
+          <div style="margin-top: 10px;" >
           <b>{{book.name}}</b><br>
            
         <!-- {{book.description}}<br> -->
@@ -24,7 +26,8 @@
            
           <b> Rs.{{book.price}}</b><br>
             <!-- {{book.quantity}} -->
-           </div>
+          </div> 
+          
         
   
           <!-- <div >
@@ -40,7 +43,7 @@
            -->
         </div>
           
-      </div>
+     </div>
     
   
   </template>
@@ -77,7 +80,7 @@
   .CreateNew {
     width: 1000px;
     margin-left: 250px;
-    margin-top: 50px;
+    margin-top: 20px;
     gap:10px;
   }
   .icone {
@@ -86,5 +89,6 @@
     justify-content: start;
     margin-right: 5px;
   }
+ 
   </style>
   
